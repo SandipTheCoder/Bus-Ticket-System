@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NewCandidate</title>
+
+        <link rel="stylesheet" type="text/css" href="AllStyle.css">
+        <link rel="stylesheet" type="text/css" href="css/all.min.css">
+        <style>
+            /* *{
+                border: 1px solid red;
+            } */
+            input[type=number]::-webkit-inner-spin-button{
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            input[type=number]::-webkit-outer-spin-button{
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            .wrapper{
+                max-width: 390px;
+                width: 100%;
+                background: rgba(0,0,0,.5);
+                margin: 20px auto;
+                padding: 30px;
+                box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+            }
+            .wrapper .title{
+                font-size: 24px;
+                font-weight: 700;
+                margin-bottom: 25px;
+                color: #fec107;
+                text-transform: uppercase;
+                text-align: center;
+            }
+            .wrapper .form{
+                width: 100%;
+            }
+            .wrapper .form .input_field{
+                margin-bottom: 18px;
+                display: flex;
+                align-items: center;  
+            } 
+            .wrapper .form #input_field{
+                margin-bottom: 18px;
+                display: flex;
+                align-items: center;
+            } 
+            .wrapper .form #input_field label{
+                width: 60px;
+                color: #fff;
+                margin: 0px 10px 0px 10px;
+                margin-right: 10px;
+                padding: 0px 10px 0px 10px ;
+                font-size: 18px; 
+            }  
+            .wrapper .form .input_field label{
+                color: lightyellow;
+                width: 200px;
+                margin-right: 10px;
+                font-size: 14px;
+            }
+            .wrapper .form .input_field .input{
+                width: 100%;
+                outline: none;
+                border: 1px solid #d5dbd9;
+                font-size: 15px;
+                padding: 8px 10px;
+                border-radius: 3px;
+                transition: all 0.3s ease;
+            } 
+            .wrapper .form .input_field #gender{
+                margin-right: 0px;
+            }
+            .wrapper .form .input_field .custom_select{
+                position: relative;
+                width: 100%;
+                height: 35px;
+            }
+            .wrapper .form .input_field .custom_select select{
+                -webkit-appearance: none;
+                appearance: none;
+                border: 1px solid #d5dbd9;
+                width: 100%;
+                height: 100%;
+                padding: 8px 10px;
+                border-radius:3px ;
+                outline: none;
+            } 
+            .wrapper .form .input_field .custom_select::before{
+                content: "";
+                position: absolute;
+                top: 12px;
+                right: 10px;
+                border: 8px solid;
+                border-color: #d5dbd9 transparent transparent transparent;
+                pointer-events: none;
+            }
+
+            .wrapper .form .input_field .input:focus,
+            .wrapper .form .input_field select:focus{
+                border: 1px solid #fec107;
+            }
+            .wrapper .form .input_field p{
+                font-size: 16px;
+                color: #757575;
+            }
+
+            .wrapper .title h1{
+                font-size: 28px;
+                color: #fec107;
+
+            }
+            .wrapper .input_field .btn{
+                width: 100%;
+                padding: 8px 10px;
+                font-size: 15px;
+                border: 0;
+                background: #fec107;
+                color: #fff;
+                cursor: pointer;
+                border-radius: 15px;
+                outline: none;
+            }
+            .wrapper .input_field .btn:hover{
+                background: #ff267e; 
+            }
+
+            
+
+        </style>
+
+        <script language="javascript">
+            function fu1(){
+                if(!isNaN(document.getElementById("nm").value)){
+                    alert("Name must be Charector!!!!");
+                    document.getElementById("nm").focus();
+                    return false;
+                }   
+            }
+        </script> 
+        
+	</head>
+
+	<body>
+        
+        <div id="div1">
+            <h1>Bus Ticket Booking System</h1>
+        </div>
+        <div id="div2">
+            <h2><a href="home.jsp"> <label class="labels fa fa-home"> Home   </label></a>
+                <a href="about.jsp">  <label class="labels fa fa-user "> About Us    </label></a>
+                <a href="searchFairs.jsp"> <label class="labels fa fa-search"> Search Fares    </label></a>
+                <a href="allBuses.jsp"> <label class="labels fa fa-bus"> All Buses   </label></a>
+                <a href="regis.html"> <label class="labels fa fa-address-book"> Register   </label></a>
+                <a href="login.jsp"> <label class="labels fa fa-user-circle"> Login    </label></a>
+                <a href="contact.jsp"> <label class="labels fa fa-phone-square"> Contact Us    </label></a>
+            </h2>
+        </div>
+        <br><br>
+
+        <div class="wrapper">
+            <div class="title">
+                <h1>Registration</h1>
+                <hr>
+            </div>
+            <form action="registers.jsp" method=post>
+            <div class="form">
+                
+                <div class="input_field">
+                    <label >Name</label>
+		            <input type="text" name="name" class="input" placeholder="Name" id="nm" onchange="fu1()" required/>
+                </div>
+
+                <div class="input_field">
+                    <label >UserId</label>
+		            <input type="number" name="id" class="input" placeholder="UserId"  required/>
+                </div>
+
+                <div class="input_field">
+                    <label >Password</label>
+		            <input type="password" name="pwd" class="input" placeholder="Password" required/>
+                </div>
+
+                <div class="input_field">
+                   <label id="gender">Gender</label>
+                   <div class="custom_select">
+                       <select name="Gender">
+                           <option value="" disabled="disabled" selected>Select</option>
+                           <option value="male">Male</option>
+                           <option value="female">Female</option>
+                           <option value="other">Other</option>
+                       </select>
+                   </div>
+                </div>
+
+                <div class="input_field">
+                    <label >Email</label>
+		            <input type="text" name="email" class="input" placeholder="Email" required/>
+                </div>
+
+                <div id="input_field"> 
+                    <label>User</label>
+                    <input type="radio" value="ruser" id="radioOne" name="role" checked/>
+			        <label>Admin</label>
+			        <input type="radio" value="admin" id="radioTwo" name="role" />
+			        
+                </div>  
+               
+            </div>
+            <div class="input_field">
+                <p>By clicking Register, you agree on our <a href="contact.jsp">terms and condition</a>.</p>
+            </div>
+            <div class="input_field">
+		        <input type=submit name=submit value="Create Account" class="btn">
+            </div>
+        </div>
+    </form> 
+    </body>
+</html>
